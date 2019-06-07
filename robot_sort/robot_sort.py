@@ -97,7 +97,8 @@ class SortingRobot:
     def sort(self):
         """
         Sort the robot's list.
-
+        - Mirror selection sort.
+        - Try to compare 2 numbers and place the lower one to the left.
         - Move from Left to right
         - Use light to handle conditionals
         - Swap, move right, compare, then swap or put item back in original place.
@@ -146,6 +147,8 @@ class SortingRobot:
                     self.swap_item()
                     self.move_right()
                     self.set_light_off()
+
+            # If light is turned off try and move left
             if not self.light_is_on():
                 # If we can't move right move left
                 while self.can_move_left():
