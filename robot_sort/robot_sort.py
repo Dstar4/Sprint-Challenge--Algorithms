@@ -122,34 +122,34 @@ class SortingRobot:
         # if the light is off Turn it on - This will mark the start of the loop
         while not self.light_is_on():
             self.set_light_on()
-            print(l)
+            # print(l)
 
             # Make sure we can go right - If we can swap items and move right
             while self.can_move_right():
                 self.swap_item()
                 self.move_right()
 
-             # Held item is equal to array item
-            if self.compare_item() == 0:
-                self.move_left()
-                self.swap_item()
-                self.move_right()
-                # Held item is less than array item
-            if self.compare_item() == -1:
-                self.move_left()
-                self.swap_item()
-                self.move_right()
-                # Held item is greater than array item
-            if self.compare_item() == 1:
-                self.swap_item()
-                self.move_left()
-                self.swap_item()
-                self.move_right()
-                self.set_light_off()
-        if not self.light_is_on():
-            # If we can't move right move left
-            while self.can_move_left():
-                self.move_left()
+                # Held item is equal to array item
+                if self.compare_item() == 0:
+                    self.move_left()
+                    self.swap_item()
+                    self.move_right()
+                    # Held item is less than array item
+                if self.compare_item() == -1:
+                    self.move_left()
+                    self.swap_item()
+                    self.move_right()
+                    # Held item is greater than array item
+                if self.compare_item() == 1:
+                    self.swap_item()
+                    self.move_left()
+                    self.swap_item()
+                    self.move_right()
+                    self.set_light_off()
+            if not self.light_is_on():
+                # If we can't move right move left
+                while self.can_move_left():
+                    self.move_left()
 
 
 if __name__ == "__main__":
